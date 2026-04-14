@@ -221,12 +221,6 @@
                 </div>
             </div>
         </div>
-        <!-- Footer Copyright -->
-        <footer class="fixed bottom-6 left-0 right-0 text-center">
-            <p class="text-[9px] uppercase tracking-[0.2em] text-on-surface-variant/40">
-                © 2024 PT. Parkland World Indonesia | Precision Division
-            </p>
-        </footer>
     </main>
     <script>
         function togglePassword() {

@@ -101,62 +101,37 @@
 
 <body class="bg-surface font-body text-on-surface antialiased overflow-hidden blueprint-bg">
     <main class="relative min-h-screen w-full flex items-center justify-center p-6">
-        <!-- Background Imagery (Prominent but Subtle) -->
         <div class="absolute inset-0 z-0 overflow-hidden opacity-10">
             <div class="absolute inset-0 bg-gradient-to-b from-surface via-transparent to-surface"></div>
         </div>
         <div class="relative z-30 w-full max-w-md">
-            <!-- Centered Forgot Password Card -->
             <div class="login-card rounded-xl border border-surface-container-highest overflow-hidden">
                 <div class="bg-primary h-1.5 w-full"></div>
                 <div class="p-8 md:p-12">
-                    <!-- Session Status -->
                     <x-auth-session-status class="mb-4" :status="session('status')" />
 
                     <div class="mb-10 text-center">
-                        <h2 class="font-headline font-extrabold text-2xl text-on-surface mb-2">Reset Access</h2>
-                        <p class="text-on-surface-variant font-medium text-sm">Enter your operator email to receive
-                            reset link</p>
+                        <h2 class="font-headline font-extrabold text-2xl text-on-surface mb-2">Akses Diblokir</h2>
+                        <p class="text-on-surface-variant font-medium text-sm">Pendaftaran akun telah dinonaktifkan</p>
                     </div>
-                    <form class="space-y-6" method="POST" action="{{ route('password.email') }}">
-                        @csrf
 
-                        <!-- Email Address -->
-                        <div class="space-y-1.5">
-                            <label
-                                class="block font-label font-bold text-[10px] uppercase tracking-[0.15em] text-on-surface-variant"
-                                for="email">Operator ID / Email</label>
-                            <div class="relative group @error('email') has-error @enderror">
-                                <span
-                                    class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-lg group-focus-within:text-primary transition-colors"
-                                    data-icon="mail">mail</span>
-                                <input
-                                    class="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 rounded px-10 py-3 font-body text-sm placeholder:text-outline-variant transition-all outline-none @error('email') border-error @enderror"
-                                    id="email" placeholder="foreman@pwi.co.id" type="email" name="email"
-                                    value="{{ old('email') }}" required autofocus autocomplete="username" />
-                            </div>
-                            @error('email')
-                                <div class="text-error text-xs mt-1">{{ $message }}</div>
-                            @enderror
-                        </div>
+                    <div class="bg-surface-container-low rounded-lg p-4 mb-6">
+                        <p class="text-sm text-on-surface text-center">
+                            Silakan hubungi <span class="font-bold text-primary">administrator</span> untuk meminta akses akun.
+                        </p>
+                    </div>
 
-                        <button
-                            class="w-full h-12 bg-primary hover:bg-primary/90 text-white font-headline font-extrabold text-sm uppercase tracking-widest rounded transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/10"
-                            type="submit">
-                            Send Reset Link
-                            <span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
-                        </button>
-                    </form>
-
-                    <div class="mt-6 text-center">
-                        <span class="text-xs text-on-surface-variant">Remember your password?</span>
-                        <a class="text-xs font-bold text-primary hover:underline transition-all uppercase tracking-tight ml-1"
-                            href="{{ route('login') }}">Sign In</a>
+                    <div class="text-center space-y-3">
+                        <p class="text-xs text-on-surface-variant">atau gunakan akun yang sudah terdaftar</p>
+                        <a class="inline-flex items-center gap-2 text-primary hover:underline font-medium text-sm"
+                            href="{{ route('login') }}">
+                            <span class="material-symbols-outlined text-[18px]" data-icon="login">login</span>
+                            Login dengan Akun Eksisting
+                        </a>
                     </div>
 
                     <div class="mt-8 pt-6 border-t border-surface-container-highest flex flex-col items-center gap-4">
-                        <p class="text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-[0.1em]">Secure
-                            Recovery: Plant Area 01</p>
+                        <p class="text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-[0.1em]">Hubungi Admin: Plant Area 01</p>
                     </div>
                 </div>
             </div>
