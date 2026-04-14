@@ -1,10 +1,11 @@
 FROM php:8.2-cli
 
-# Install dependencies
+# Install dependencies (TAMBAH libzip-dev)
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
+    libzip-dev \
     zip \
     unzip \
     git \
@@ -14,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd
 
-# Install extensions lain
+# Install extension lain (sekarang zip bakal berhasil)
 RUN docker-php-ext-install pdo pdo_mysql zip
 
 # Install Composer
